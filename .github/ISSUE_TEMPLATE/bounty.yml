@@ -1,0 +1,71 @@
+name: Bounty
+description: Create a new RTC-paid bounty
+title: "[BOUNTY] "
+labels: ["bounty", "open"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New RTC Bounty
+        Fill in the details below to post a bounty.
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What needs to be built or fixed?
+      placeholder: Describe the objective clearly
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope & Requirements
+      description: What's in scope? What are the acceptance criteria?
+      placeholder: |
+        In-scope:
+        - ...
+
+        Acceptance criteria:
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Bounty Tier
+      options:
+        - "Micro (1-10 RTC)"
+        - "Standard (10-50 RTC)"
+        - "Major (50-200 RTC)"
+        - "Critical (200-500 RTC)"
+    validations:
+      required: true
+
+  - type: input
+    id: payout
+    attributes:
+      label: RTC Payout
+      description: Exact RTC amount for this bounty
+      placeholder: "25"
+    validations:
+      required: true
+
+  - type: textarea
+    id: skills
+    attributes:
+      label: Skills Needed
+      description: What skills or knowledge are required?
+      placeholder: "Python, networking, blockchain, security..."
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: Resources & Context
+      description: Links to relevant code, docs, or discussions
+      placeholder: |
+        - File: /root/rustchain/...
+        - Docs: ...
+        - Related issue: #...
